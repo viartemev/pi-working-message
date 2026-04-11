@@ -1,40 +1,63 @@
 # pi-working-message
 
-Configurable working-message phrases for [pi](https://github.com/badlogic/pi-mono) via JSON.
+[![Release](https://img.shields.io/github/v/release/viartemev/pi-working-message?style=flat-square)](https://github.com/viartemev/pi-working-message/releases)
+[![License](https://img.shields.io/github/license/viartemev/pi-working-message?style=flat-square)](./LICENSE)
+[![pi package](https://img.shields.io/badge/pi-package-blue?style=flat-square)](https://shittycodingagent.ai/packages)
 
-This package changes only pi's **working message** while the agent is busy.
-It does **not** change the footer, title bar, thinking label, or any other UI element.
+A small, focused [pi](https://github.com/badlogic/pi-mono) package that customizes the **working message** shown while the agent is busy.
 
-For each request, pi-working-message shows exactly **one phrase**. The phrase does not rotate during the same response.
+It changes **only** the working message and nothing else:
+- no footer changes
+- no title bar changes
+- no thinking-label changes
+- no extra UI widgets
 
-Defaults:
+For each request, `pi-working-message` shows exactly **one phrase**. The phrase does **not** rotate during the same response.
+
+## Features
+
+- JSON-based configuration
+- global and project-level config support
+- `random` and `round-robin` phrase selection
+- safe defaults
+- standard pi package layout
+
+## Default behavior
+
+By default, the package is:
 - `enabled: true`
 - `selection: "random"`
 
-## Install
+If you install it and do nothing else, it will work out of the box.
 
-### From GitHub
+## Installation
+
+### Install from GitHub
 
 ```bash
-pi install https://github.com/viartemev/pi-working-message
+pi install https://github.com/viartemev/pi-working-message@v0.1.0
 ```
 
-### From a local path
+### Install from a local path
 
 ```bash
 pi install /absolute/path/to/pi-working-message
 ```
 
-Then run `/reload` in pi if it is already open.
+If pi is already running, execute:
+
+```bash
+/reload
+```
 
 ## Configuration
 
-The package looks for JSON config files in this order:
+The package reads configuration in this order:
 
 1. `~/.pi/agent/working-message.json`
-2. `.pi/working-message.json` in the current project
+2. `.pi/working-message.json`
 
-If both exist, the project config overrides the global config.
+If both files exist, the project-level config overrides the global one.
 If neither exists, built-in defaults are used.
 
 ### Example config
@@ -45,18 +68,18 @@ If neither exists, built-in defaults are used.
   "enabled": true,
   "selection": "random",
   "phrases": [
-    "Обкашляю вопросик",
-    "Решаю вопросик",
-    "Сейчас подскочу"
+    "Looking into it",
+    "Working on it",
+    "One moment"
   ]
 }
 ```
 
-### Options
+### Config fields
 
 - `enabled`: `true` or `false`
 - `selection`: `"random"` or `"round-robin"`
-- `phrases`: array of phrases to use
+- `phrases`: array of strings
 
 ## Commands
 
@@ -66,12 +89,12 @@ If neither exists, built-in defaults are used.
 ## Notes
 
 - one request = one phrase
-- the config is re-read on every request
-- invalid JSON shows a warning and falls back to the default working message behavior for that turn
+- config is reloaded on every request
+- if the JSON config is invalid, the package shows a warning and falls back to pi's default working-message behavior for that turn
 
-## Development
+## Package manifest
 
-This is a standard pi package:
+This repository is a standard pi package:
 
 ```json
 {
