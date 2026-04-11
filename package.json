@@ -10,6 +10,14 @@
   ],
   "license": "MIT",
   "author": "Artem Ev <viartemev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viartemev/pi-working-message.git"
+  },
+  "homepage": "https://github.com/viartemev/pi-working-message",
+  "bugs": {
+    "url": "https://github.com/viartemev/pi-working-message/issues"
+  },
   "files": [
     "extensions",
     "config",
