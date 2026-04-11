@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/viartemev/pi-working-message/main/schemas/working-message.schema.json",
+  "title": "pi-working-message config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "selection": {
+      "type": "string",
+      "enum": ["random", "round-robin"],
+      "default": "random"
+    },
+    "phrases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  }
+}

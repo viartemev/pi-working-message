@@ -1,0 +1,29 @@
+{
+  "name": "pi-working-message",
+  "version": "0.1.0",
+  "description": "Configurable working-message phrases for pi via JSON config.",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "working-message",
+    "spinner"
+  ],
+  "license": "MIT",
+  "author": "Artem Ev <viartemev@gmail.com>",
+  "files": [
+    "extensions",
+    "config",
+    "schemas",
+    "working-message.example.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  }
+}

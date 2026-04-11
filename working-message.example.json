@@ -1,0 +1,10 @@
+{
+  "$schema": "./schemas/working-message.schema.json",
+  "enabled": true,
+  "selection": "random",
+  "phrases": [
+    "Обкашляю вопросик",
+    "Решаю вопросик",
+    "Сейчас подскочу"
+  ]
+}
