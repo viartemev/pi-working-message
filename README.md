@@ -7,6 +7,10 @@ It does **not** change the footer, title bar, thinking label, or any other UI el
 
 For each request, pi-working-message shows exactly **one phrase**. The phrase does not rotate during the same response.
 
+Defaults:
+- `enabled: true`
+- `selection: "random"`
+
 ## Install
 
 ### From GitHub
