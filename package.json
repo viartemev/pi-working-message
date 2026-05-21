@@ -1,7 +1,7 @@
 {
   "name": "pi-working-message",
   "version": "0.1.0",
-  "description": "Configurable working-message phrases for pi via JSON config.",
+  "description": "Custom working-message phrases for pi.",
   "keywords": [
     "pi-package",
     "pi",
@@ -20,9 +20,6 @@
   },
   "files": [
     "extensions",
-    "config",
-    "schemas",
-    "working-message.example.json",
     "README.md",
     "LICENSE"
   ],

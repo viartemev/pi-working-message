@@ -16,19 +16,14 @@ For each request, `pi-working-message` shows exactly **one phrase**. The phrase 
 
 ## Features
 
-- JSON-based configuration
-- global and project-level config support
-- `random` and `round-robin` phrase selection
+- works as soon as the extension is installed
+- random phrase selection
 - safe defaults
 - standard pi package layout
 
 ## Default behavior
 
-By default, the package is:
-- `enabled: true`
-- `selection: "random"`
-
-If you install it and do nothing else, it will work out of the box.
+If the extension is installed, it is enabled. No config file is needed.
 
 ## Installation
 
@@ -62,47 +57,16 @@ If pi is already running, execute:
 /reload
 ```
 
-## Configuration
-
-The package reads configuration in this order:
-
-1. `~/.pi/agent/working-message.json`
-2. `.pi/working-message.json`
-
-If both files exist, the project-level config overrides the global one.
-If neither exists, built-in defaults are used.
-
-### Example config
-
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/viartemev/pi-working-message/main/schemas/working-message.schema.json",
-  "enabled": true,
-  "selection": "random",
-  "phrases": [
-    "Looking into it",
-    "Working on it",
-    "One moment"
-  ]
-}
-```
-
-### Config fields
-
-- `enabled`: `true` or `false`
-- `selection`: `"random"` or `"round-robin"`
-- `phrases`: array of strings
-
 ## Commands
 
-- `/working-message` — show current status and config source
+- `/working-message` — show current status
 - `/working-message preview` — preview the next phrase
 
 ## Notes
 
 - one request = one phrase
-- config is reloaded on every request
-- if the JSON config is invalid, the package shows a warning and falls back to pi's default working-message behavior for that turn
+- phrases are built into the extension
+- uninstall or disable the extension to stop changing the working message
 
 ## Package manifest
 
