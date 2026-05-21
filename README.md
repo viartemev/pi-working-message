@@ -32,6 +32,18 @@ If you install it and do nothing else, it will work out of the box.
 
 ## Installation
 
+### Install from npm
+
+```bash
+pi install npm:pi-working-message
+```
+
+To update later:
+
+```bash
+pi update npm:pi-working-message
+```
+
 ### Install from GitHub
 
 ```bash
